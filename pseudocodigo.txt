@@ -1,1 +1,67 @@
-dsdsd
+INÍCIO DO SISTEMA
+
+    INICIALIZAR biblioteca SPI
+    INICIALIZAR leitor RFID (MFRC522)
+    INICIALIZAR comunicação serial
+
+    DEFINIR tag autorizada
+    DEFINIR status do funcionário (ativo)
+    DEFINIR permissão de acesso
+
+    EXIBIR "Sistema iniciado"
+    EXIBIR "Aproxime a tag"
+
+    // Loop principal do sistema
+    ENQUANTO sistema estiver ligado FAÇA
+
+        SE nova tag for detectada ENTÃO
+
+            LER tag do usuário
+
+            // Verificação da tag
+            SE tag NÃO for igual à tag autorizada ENTÃO
+                EXIBIR "Acesso negado: tag inválida"
+                REGISTRAR tentativa
+                VOLTAR para início do loop
+            FIMSE
+
+            // Verificação de status do funcionário
+            SE funcionário NÃO estiver ativo ENTÃO
+                EXIBIR "Acesso negado: funcionário inativo"
+                REGISTRAR tentativa
+                VOLTAR para início do loop
+            FIMSE
+
+            // Verificação de permissão
+            SE funcionário NÃO tiver permissão ENTÃO
+                EXIBIR "Acesso negado: sem permissão"
+                REGISTRAR tentativa
+                VOLTAR para início do loop
+            FIMSE
+
+            // Liberação de acesso
+            EXIBIR "Acesso liberado"
+            ACIONAR trava da porta (liberar entrada)
+            REGISTRAR entrada
+
+            EXIBIR "Funcionário dentro do laboratório"
+
+            // Controle de saída com do...while
+            FAÇA
+
+                SE tag de saída for detectada ENTÃO
+                    LER tag_saida
+                    EXIBIR "Tag de saída detectada"
+                FIMSE
+
+            ENQUANTO tag_saida NÃO for válida
+
+            // Registro de saída
+            EXIBIR "Saída autorizada"
+            REGISTRAR saída
+
+        FIMSE
+
+    FIMENQUANTO
+
+FIM DO SISTEMA
