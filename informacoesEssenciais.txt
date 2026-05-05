@@ -1,0 +1,17 @@
+Restrição de acesso ao laboratório de produção
+
+O laboratório de produção abriga equipamentos que apresentam riscos à segurança dos colaboradores. No entanto, a ausência de um sistema eficiente de controle de acesso pode permitir a entrada de pessoas não autorizadas.
+
+Essa situação aumenta significativamente a probabilidade de acidentes, além de comprometer a organização e a segurança do ambiente de trabalho. Portanto, é fundamental implementar um mecanismo que garanta que somente funcionários autorizados tenham acesso ao local.
+
+Descrição da solução proposta
+
+Nosso grupo propõe a implementação de um sistema de controle de entrada e saída de funcionários por meio de tags de identificação (RFID).
+
+O sistema será desenvolvido utilizando um Arduino Uno integrado a um leitor RFID, responsável por identificar os usuários por meio de suas respectivas tags. Será criado um programa capaz de cadastrar e reconhecer os funcionários autorizados a acessar o laboratório.
+
+O funcionamento ocorrerá da seguinte forma: ao aproximar a tag do leitor, o sistema realizará a leitura do identificador e verificará se o funcionário está cadastrado e ativo no banco de dados da empresa. Em seguida, será analisado se o usuário possui permissão para acessar o laboratório de produção.
+
+Caso todas as condições sejam atendidas, o acesso será liberado automaticamente, e a entrada do funcionário será registrada no sistema. Ao sair do ambiente, o colaborador deverá aproximar novamente a tag no leitor, permitindo o registro da saída.
+
+Por outro lado, se a tag não estiver cadastrada, o funcionário não estiver ativo ou não possuir autorização para acessar o local, o sistema negará o acesso e exibirá uma mensagem informando a restrição, garantindo assim a segurança do ambiente.
