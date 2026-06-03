@@ -1,35 +1,58 @@
-# Block&Go — Restrição de Acesso (Fluxograma SA)
+# Block&Go — Desenvolvimento de Softwares de Segurança
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Segmento-Segurança%20Corporativa-red?style=for-the-badge" alt="Segmento">
   <img src="https://img.shields.io/badge/Hardware-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino">
-  <img src="https://img.shields.io/badge/Design-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
 </p>
 
-## 📝 Sobre o Projeto
-[Substitua este parágrafo pelo resumo da Block&Go: O que o projeto faz, qual problema de restrição de acesso ele resolve e qual é a visão da empresa.]
+## 🏢 Sobre a Block&Go
+A **Block&Go** é uma empresa especializada no desenvolvimento de softwares de segurança de alta confiabilidade. Nosso foco é criar soluções inteligentes de automação e controle que protegem ambientes corporativos, mitigam riscos e garantem a integridade operacional de nossos clientes.
+
+## 🔒 Projeto: Sistema de Restrição de Acesso (Fluxograma SA)
+Esta solução foi desenvolvida sob medida para gerenciar e restringir o acesso físico a ambientes corporativos críticos (como salas de servidores, tesourarias ou diretorias). 
+
+O sistema opera através de identificação por **RFID**, onde cada funcionário possui uma credencial única. Ao aproximar a tag do leitor, o software valida o nível de privilégio do usuário em tempo real:
+*   **Funcionários autorizados:** Têm a entrada liberada imediatamente.
+*   **Funcionários sem permissão:** Têm o acesso estritamente bloqueado, garantindo que apenas o pessoal devido entre no recinto.
 
 ---
 
-## 🚀 Links Rápidos e Recursos
+## 🚀 Arquitetura e Recursos do Projeto
 
-Para facilitar a navegação e a apresentação do nosso ecossistema, utilize os acessos diretos abaixo:
+Para a apresentação da nossa solução, centralizamos a lógica do sistema, o mapeamento de processos e os códigos-fonte nos links oficiais abaixo:
 
-| Recurso | Descrição | Link de Acesso |
+| Recurso | Descrição Técnica | Link de Acesso |
 | :--- | :--- | :--- |
-| **Cadastro de Tag RFID** | Código fonte para inicialização e registro de novas tags. | [Acessar Sketch Arduino 🌐](https://app.arduino.cc/sketches/7767df872-1389-4493-901e-5469cd0f5457?view-mode=preview) |
-| **Leitura de Tag RFID** | Sistema de validação e controle de entrada/saída de dados. | [Acessar Sketch Arduino 🌐](https://app.arduino.cc/sketches/dc2580f5-9ce5-4b27-9bc4-3ee6122927cb?view-mode=preview) |
-| **Fluxograma do Sistema** | Arquitetura visual do mapeamento de processos e lógica de restrição. | [Visualizar no Figma 🎨](https://www.figma.com/board/mglCk6guB4dBxv1UPrZWvS/Code-Flowchart--Community-?node-id=6-9&t=vBzgOY70qMwmKwc2-1) |
+| **Módulo de Cadastro** | Algoritmo em C++ responsável pelo registro inicial e vinculação de novas tags RFID no sistema. | [Acessar Sketch Arduino 🌐](https://app.arduino.cc/sketches/767df872-1389-4493-901e-5469cd0f5457?view-mode=preview) |
+| **Módulo de Leitura e Validação** | Software de ponta que executa a leitura da tag, valida o nível de acesso do funcionário e comanda a trava física. | [Acessar Sketch Arduino 🌐](https://app.arduino.cc/sketches/dc2580f5-9ce5-4b27-9bc4-3ee6122927cb?view-mode=preview) |
+| **Fluxograma SA (Lógica do Sistema)** | Modelagem visual completa das regras de negócio, tomadas de decisão e restrições do fluxo. | [Visualizar no Figma 🎨](https://www.figma.com/board/mgICk6guB4dBxv1UPrZWvS/Code-Flowchart--Community-?node-id=6-9&t=vBzgOY70qMwmKwc2-1) |
 
 ---
 
-## 🛠️ Tecnologias e Componentes Utilizados
-*   **Microcontrolador:** Arduino (especificar o modelo depois, ex: Uno, Nano, ESP32)
-*   **Módulo de Leitura:** Leitor RFID RC522 (ou equivalente)
-*   **Arquitetura:** Mapeamento lógico de fluxo de dados corporativos.
+## 🛠️ Arquitetura de Hardware e Componentes
+
+Para garantir a confiabilidade e a estabilidade da validação de acesso em tempo real, a infraestrutura física do protótipo foi projetada utilizando os seguintes componentes:
+
+*   **Microcontrolador Central:** Arduino Uno R3 (responsável pelo processamento lógico, comunicação com os periféricos e execução das regras de restrição).
+*   **Módulo de Identificação:** Leitor RFID-RC522 (operando na frequência de 13.56 MHz para leitura das tags e cartões dos funcionários).
 
 ---
 
-## 👥 Nossa Equipe (Block&Go)
-*   **Seu Nome** - *Sua Função / Desenvolvimento* - [Seu GitHub](https://github.com/)
-*   **Nome do Parceiro** - *Função* - [GitHub](https://github.com/)
+## 💻 Pré-requisitos e Como Executar
+
+Para realizar testes ou replicar o ambiente de desenvolvimento da solução Block&Go, siga os passos abaixo:
+
+1. Instale a **Arduino IDE** (versão 2.0 ou superior).
+2. Certifique-se de ter instalada a biblioteca necessária para o leitor de cartões: `MFRC522`.
+3. Conecte o **Arduino Uno** à porta USB do seu computador.
+4. Abra os códigos através dos links disponibilizados na seção de recursos e faça o upload para a placa.
+
+---
+
+## 👥 Integrantes do Grupo (Equipe Block&Go)
+
+*   Eduardo Scheidt
+*   Matheus Pires
+*   Müller Gomes
+*   Patrick Ruchinski
