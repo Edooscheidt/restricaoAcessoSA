@@ -1,67 +1,69 @@
+ALGORITMO: Controle de Acesso Corporativo - Block&Go
+SISTEMA: Fluxograma SA (Restrição de Acesso)
+
 INÍCIO DO SISTEMA
 
+    // --- Etapa de Inicialização do Hardware ---
     INICIALIZAR biblioteca SPI
     INICIALIZAR leitor RFID (MFRC522)
-    INICIALIZAR comunicação serial
+    INICIALIZAR comunicação serial (Hardware UART)
 
-    DEFINIR tag autorizada
-    DEFINIR status do funcionário (ativo)
-    DEFINIR permissão de acesso
+    // --- Definição de Variáveis Globais de Segurança ---
+    DEFINIR tag_autorizada
+    DEFINIR status_funcionario <- "Ativo"
+    DEFINIR permissao_acesso   <- "Autorizado"
 
-    EXIBIR "Sistema iniciado"
-    EXIBIR "Aproxime a tag"
+    EXIBIR "Block&Go: Sistema iniciado com sucesso."
+    EXIBIR "Status: Aguardando aproximação da tag RFID..."
 
-    // Loop principal do sistema
-    ENQUANTO sistema estiver ligado FAÇA
+    // --- Loop Principal do Ecossistema ---
+    ENQUANTO (sistema_ligado == VERDADEIRO) FAÇA
 
-        SE nova tag for detectada ENTÃO
+        SE (nova_tag_detectada) ENTÃO
+            LER tag_usuario
 
-            LER tag do usuário
+            // [VALIDAÇÃO 1] Verificação de autenticidade física da Tag
+            SE (tag_usuario != tag_autorizada) ENTÃO
+                EXIBIR "ALERTA: Acesso negado. Tag inválida ou não cadastrada."
+                REGISTRAR_LOG(tentativa_acesso, "Tag Inválida")
+                RETORNAR_PARA_INICIO
+            FIM_SE
 
-            // Verificação da tag
-            SE tag NÃO for igual à tag autorizada ENTÃO
-                EXIBIR "Acesso negado: tag inválida"
-                REGISTRAR tentativa
-                VOLTAR para início do loop
-            FIMSE
+            // [VALIDAÇÃO 2] Verificação cadastral do colaborador
+            SE (status_funcionario != "Ativo") ENTÃO
+                EXIBIR "ALERTA: Acesso negado. Funcionário inativo no sistema."
+                REGISTRAR_LOG(tentativa_acesso, "Funcionário Inativo")
+                RETORNAR_PARA_INICIO
+            FIM_SE
 
-            // Verificação de status do funcionário
-            SE funcionário NÃO estiver ativo ENTÃO
-                EXIBIR "Acesso negado: funcionário inativo"
-                REGISTRAR tentativa
-                VOLTAR para início do loop
-            FIMSE
+            // [VALIDAÇÃO 3] Verificação de nível de privilégio/permissão
+            SE (permissao_acesso != "Autorizado") ENTÃO
+                EXIBIR "ALERTA: Acesso negado. Usuário sem nível de permissão necessário."
+                REGISTRAR_LOG(tentativa_acesso, "Sem Permissão")
+                RETORNAR_PARA_INICIO
+            FIM_SE
 
-            // Verificação de permissão
-            SE funcionário NÃO tiver permissão ENTÃO
-                EXIBIR "Acesso negado: sem permissão"
-                REGISTRAR tentativa
-                VOLTAR para início do loop
-            FIMSE
+            // --- Acesso Concedido ---
+            EXIBIR "SUCESSO: Acesso liberado!"
+            ACIONAR_HARDWARE(trava_porta, LIBERAR_ENTRADA)
+            REGISTRAR_LOG(evento_acesso, "Entrada Confirmada")
 
-            // Liberação de acesso
-            EXIBIR "Acesso liberado"
-            ACIONAR trava da porta (liberar entrada)
-            REGISTRAR entrada
+            EXIBIR "Monitoramento: Funcionário em ambiente restrito."
 
-            EXIBIR "Funcionário dentro do laboratório"
-
-            // Controle de saída com do...while
+            // --- Sub-rotina de Controle de Retorno (Saída) ---
             FAÇA
-
-                SE tag de saída for detectada ENTÃO
+                SE (tag_saida_detectada) ENTÃO
                     LER tag_saida
-                    EXIBIR "Tag de saída detectada"
-                FIMSE
+                    EXIBIR "Aviso: Processando tag de saída..."
+                FIM_SE
+            ENQUANTO (tag_saida != tag_autorizada)
 
-            ENQUANTO tag_saida NÃO for válida
+            // --- Fechamento do Ciclo de Acesso ---
+            EXIBIR "SUCESSO: Saída autorizada e registrada."
+            REGISTRAR_LOG(evento_acesso, "Saída Confirmada")
 
-            // Registro de saída
-            EXIBIR "Saída autorizada"
-            REGISTRAR saída
+        FIM_SE
 
-        FIMSE
-
-    FIMENQUANTO
+    FIM_ENQUANTO
 
 FIM DO SISTEMA
