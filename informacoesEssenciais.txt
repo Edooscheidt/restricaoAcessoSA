@@ -1,17 +1,35 @@
-Restrição de acesso ao laboratório de produção
+# Detalhamento do Projeto — Restrição de Acesso ao Laboratório de Produção
+**Empresa:** Block&Go  
+**Contexto de Aplicação:** Segurança do Trabalho e Controle de Patrimônio  
 
-O laboratório de produção abriga equipamentos que apresentam riscos à segurança dos colaboradores. No entanto, a ausência de um sistema eficiente de controle de acesso pode permitir a entrada de pessoas não autorizadas.
+---
 
-Essa situação aumenta significativamente a probabilidade de acidentes, além de comprometer a organização e a segurança do ambiente de trabalho. Portanto, é fundamental implementar um mecanismo que garanta que somente funcionários autorizados tenham acesso ao local.
+## 1. Contextualização e Diagnóstico do Problema
 
-Descrição da solução proposta
+O **laboratório de produção** é um ambiente crítico que abriga maquinários, insumos e equipamentos de alto valor que apresentam riscos severos à segurança física e à integridade dos colaboradores caso sejam operados incorretamente. 
 
-Nosso grupo propõe a implementação de um sistema de controle de entrada e saída de funcionários por meio de tags de identificação (RFID).
+Atualmente, a ausência de um mecanismo automatizado e robusto de controle de acesso gera as seguintes vulnerabilidades:
+* **Risco de Acidentes:** Permite a entrada de pessoas não autorizadas, sem o devido treinamento ou Equipamentos de Proteção Individual (EPIs) adequados.
+* **Quebra de Organização:** Dificulta a auditoria de quem esteve no ambiente em determinados horários.
+* **Vulnerabilidade de Patrimônio:** Expõe equipamentos sensíveis a manuseios incorretos ou acessos mal-intencionados.
 
-O sistema será desenvolvido utilizando um Arduino Uno integrado a um leitor RFID, responsável por identificar os usuários por meio de suas respectivas tags. Será criado um programa capaz de cadastrar e reconhecer os funcionários autorizados a acessar o laboratório.
+Portanto, tornou-se fundamental a implementação de um sistema que garanta que **somente funcionários autorizados e ativos** tenham acesso ao local.
 
-O funcionamento ocorrerá da seguinte forma: ao aproximar a tag do leitor, o sistema realizará a leitura do identificador e verificará se o funcionário está cadastrado e ativo no banco de dados da empresa. Em seguida, será analisado se o usuário possui permissão para acessar o laboratório de produção.
+---
 
-Caso todas as condições sejam atendidas, o acesso será liberado automaticamente, e a entrada do funcionário será registrada no sistema. Ao sair do ambiente, o colaborador deverá aproximar novamente a tag no leitor, permitindo o registro da saída.
+## 2. Descrição Detalhada da Solução Proposta
 
-Por outro lado, se a tag não estiver cadastrada, o funcionário não estiver ativo ou não possuir autorização para acessar o local, o sistema negará o acesso e exibirá uma mensagem informando a restrição, garantindo assim a segurança do ambiente.
+A **Block&Go** desenvolveu uma solução de controle de entrada e saída baseada na tecnologia de identificação por radiofrequência (**RFID**). A arquitetura une a agilidade do hardware dedicado à precisão do controle de regras de software.
+
+### ⚙️ Funcionamento Dinâmico do Ecossistema
+
+O fluxo operacional do sistema foi desenhado para seguir os seguintes critérios de segurança:
+
+1. **Aproximação e Leitura:** O funcionário aproxima seu crachá/tag corporativa do leitor RFID acoplado à entrada do laboratório. O microcontrolador Arduino Uno realiza a leitura do identificador único (UID) da tag.
+2. **Tripla Checagem de Segurança (Software):**
+    * *Validação Cadastral:* Verifica se a tag correspondente está devidamente cadastrada no banco de dados.
+    * *Validação de Status:* Confirma se o colaborador está com o contrato **Ativo** na empresa.
+    * *Validação de Nível de Acesso:* Analisa se aquele perfil específico possui privilégios de entrada liberados para a zona do Laboratório de Produção.
+3. **Concessão de Acesso:** Caso todas as condições sejam atendidas, o sistema envia um pulso lógico para liberar a trava física da porta, exibe uma mensagem de sucesso e registra a entrada do funcionário no banco de dados.
+4. **Controle de Evasão (Saída):** Ao terminar suas atividades, o colaborador deve aproximar novamente sua tag no leitor interno, permitindo que o software encerre o ciclo de permanência e registre o horário exato de saída.
+5. **Tratamento de Bloqueios:** Se qualquer uma das validações falhar (tag inválida, funcionário inativo ou sem permissão), o acesso físico permanece estritamente bloqueado. O sistema gera um alerta visual/sonoro e armazena a tentativa de invasão para auditorias futuras.
