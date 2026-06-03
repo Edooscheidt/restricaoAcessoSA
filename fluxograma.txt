@@ -1,4 +1,9 @@
 Link do FluxoGrama :
 
 
+
+<p align="center">
+  <img src="fluxograma.png" alt="Fluxograma do Sistema de Restrição de Acesso Block&Go" width="500px">
+</p>
+
 https://www.figma.com/board/mgICk6guB4dBxv1UPrZWvS/Code-Flowchart--Community-?node-id=0-1&t=0dB5x8Az8PGbLkAM-1
