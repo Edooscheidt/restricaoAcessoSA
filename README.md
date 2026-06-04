@@ -49,4 +49,18 @@ Para garantir a confiabilidade e a estabilidade da validação de acesso em temp
 
 ## 💻 Pré-requisitos e Como Executar
 
-Para realizar testes ou
+Para realizar testes ou replicar o ambiente de desenvolvimento da solução Block&Go, siga os passos abaixo:
+
+1. Instale a **Arduino IDE** (versão 2.0 ou superior) ou utilize o simulador online do Wokwi pelo link na tabela de recursos.
+2. Certifique-se de ter instalada a biblioteca necessária para o leitor de cartões caso use a IDE física: `MFRC522`.
+3. Conecte o **Arduino Uno** à porta USB do seu computador.
+4. Abra os códigos através dos links disponibilizados na seção de recursos e faça o upload para a placa.
+
+---
+
+## 👥 Integrantes do Grupo (Equipe Block&Go)
+
+* Eduardo Scheidt
+* Matheus Pires
+* Müller Gomes
+* Patrick Ruchinski
