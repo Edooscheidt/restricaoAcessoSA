@@ -33,7 +33,7 @@ Para a apresentação da nossa solução, centralizamos a lógica do sistema, o 
 Abaixo está a representação visual da inteligência de segurança desenvolvida pela nossa equipe corporativa, detalhando as tomadas de decisão desde a aproximação da tag RFID até o registro das ações de entrada e saída:
 
 <p align="center">
-  <img width="435" height="710" alt="Image" src="https://github.com/user-attachments/assets/556a3301-48a3-4cb9-a4a2-09adff275f97" />>
+  <img width="435" height="710" alt="Image" src="https://github.com/user-attachments/assets/556a3301-48a3-4cb9-a4a2-09adff275f97" />
 </p>
 
 ---
