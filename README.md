@@ -16,6 +16,14 @@ O sistema opera através de identificação por **RFID**, onde cada funcionário
 * **Funcionários autorizados:** Têm a entrada liberada imediatamente.
 * **Funcionários sem permissão:** Têm o acesso estritamente bloqueado, garantindo que apenas o pessoal devido entre no recinto.
 
+### 📊 Mapeamento do Fluxo de Processos
+
+Abaixo está a representação visual da inteligência de segurança desenvolvida pela nossa equipe corporativa, detalhando as tomadas de decisão desde a aproximação da tag RFID até o registro das ações de entrada e saída:
+
+<p align="center">
+  <img width="435" height="710" alt="Image" src="https://github.com/user-attachments/assets/556a3301-48a3-4cb9-a4a2-09adff275f97" />
+</p>
+
 ---
 
 ## 🚀 Arquitetura e Recursos do Projeto
@@ -28,13 +36,7 @@ Para a apresentação da nossa solução, centralizamos a lógica do sistema, o 
 | **Módulo de Leitura e Validação** | Software de ponta que executa a leitura da tag, valida o nível de acesso do funcionário e comanda a trava física. | [Acessar Simulador Wokwi 🌐](https://wokwi.com/projects/465674555795597313) |
 | **Fluxograma SA (Lógica do Sistema)** | Modelagem visual completa das regras de negócio, tomadas de decisão e restrições do fluxo. | [Visualizar no Figma 🎨](https://www.figma.com/board/mgICk6guB4dBxv1UPrZWvS/Code-Flowchart--Community-?node-id=6-9&t=vBzgOY70qMwmKwc2-1) |
 
-### 📊 Mapeamento do Fluxo de Processos
 
-Abaixo está a representação visual da inteligência de segurança desenvolvida pela nossa equipe corporativa, detalhando as tomadas de decisão desde a aproximação da tag RFID até o registro das ações de entrada e saída:
-
-<p align="center">
-  <img width="435" height="710" alt="Image" src="https://github.com/user-attachments/assets/556a3301-48a3-4cb9-a4a2-09adff275f97" />
-</p>
 
 ---
 
@@ -58,7 +60,7 @@ Para realizar testes ou replicar o ambiente de desenvolvimento da solução Bloc
 
 ---
 
-## 👥 Integrantes do Grupo (Equipe Block&Go)
+## 👥 Equipe Block&Go
 
 * Eduardo Scheidt
 * Matheus Pires
