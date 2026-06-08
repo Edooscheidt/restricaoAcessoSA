@@ -58,6 +58,9 @@ Para realizar testes ou replicar o ambiente de desenvolvimento da solução Bloc
 2. Certifique-se de ter instalada a biblioteca necessária para o leitor de cartões caso use a IDE física: `MFRC522`.
 3. Conecte o **Arduino Uno** à porta USB do seu computador.
 4. Abra os códigos através dos links disponibilizados na seção de recursos e faça o upload para a placa.
+5. 3x Resistores 220-Ohms 
+6. 1x LED RGB CÁTODO
+7. 1x PLACA MÃE
 
 ---
 
