@@ -22,7 +22,7 @@ O sistema opera através de identificação por **RFID**, onde cada funcionário
 Abaixo está a representação visual da inteligência de segurança desenvolvida pela nossa equipe corporativa, detalhando as tomadas de decisão desde a aproximação da tag RFID até o registro das ações de entrada e saída:
 
 <p align="center">
-  <img width="435" height="710" alt="Image" src="https://github.com/user-attachments/assets/556a3301-48a3-4cb9-a4a2-09adff275f97" />
+  <img width="499" height="704" alt="Image" src="https://github.com/user-attachments/assets/4a65a765-a8a8-4087-bc53-d3191f9676fe" />
 </p>
 
 ---
