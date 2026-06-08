@@ -34,7 +34,7 @@ Para a apresentação da nossa solução, centralizamos a lógica do sistema, o 
 
 | Recurso | Descrição Técnica | Link de Acesso |
 | :--- | :--- | :--- |
-| **Módulo de Cadastro** | Algoritmo em C++ responsável pelo registro inicial e vinculação de novas tags RFID no sistema. | [Acessar Sketch Arduino 🌐]([[https://app.arduino.cc/sketches/767df872-1389-4493-901e-5469cd0f5457?view-mode=preview](https://app.arduino.cc/sketches/767df872-1389-4493-901e-5649cd0f5457?view-mode=preview)](https://app.arduino.cc/sketches/767df872-1389-4493-901e-5649cd0f5457?view-mode=preview)) |
+| **Módulo de Cadastro** | Algoritmo em C++ responsável pelo registro inicial e vinculação de novas tags RFID no sistema. | [Acessar Sketch Arduino 🌐](https://app.arduino.cc/sketches/767df872-1389-4493-901e-5649cd0f5457?view-mode=preview) |
 | **Módulo de Leitura e Validação** | Software de ponta que executa a leitura da tag, valida o nível de acesso do funcionário e comanda a trava física. | [Acessar Simulador Wokwi 🌐](https://wokwi.com/projects/465674555795597313) |
 | **Fluxograma SA (Lógica do Sistema)** | Modelagem visual completa das regras de negócio, tomadas de decisão e restrições do fluxo. | [Visualizar no Figma 🎨](https://www.figma.com/board/mgICk6guB4dBxv1UPrZWvS/Code-Flowchart--Community-?node-id=6-9&t=vBzgOY70qMwmKwc2-1) |
 
