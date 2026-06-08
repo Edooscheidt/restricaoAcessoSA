@@ -16,7 +16,7 @@ Esta solução foi desenvolvida sob medida para gerenciar e restringir o acesso 
 
 O sistema opera através de identificação por **RFID**, onde cada funcionário possui uma credencial única. Ao aproximar a tag do leitor, o software valida o nível de privilégio do usuário em tempo real:
 * **Funcionários autorizados:** Têm a entrada liberada imediatamente.
-* **Funcionários sem permissão:** Têm o acesso estritamente bloqueado, garantindo que apenas o pessoal devido entre no recinto.
+* **Funcionários sem permissão:** Têm o acesso estritamente bloqueado, garantindo que apenas pessoas autorizadas entrem no local.
 
 ### 📊 Mapeamento do Fluxo de Processos
 
