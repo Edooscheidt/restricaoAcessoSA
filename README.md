@@ -44,9 +44,13 @@ Para a apresentação da nossa solução, centralizamos a lógica do sistema, o 
 ## 🛠️ Arquitetura de Hardware e Componentes
 
 Para garantir a confiabilidade e a estabilidade da validação de acesso em tempo real, a infraestrutura física do protótipo foi projetada utilizando os seguintes componentes:
-
 * **Microcontrolador Central:** Arduino Uno R3 (responsável pelo processamento lógico, comunicação com os periféricos e execução das regras de restrição).
 * **Módulo de Identificação:** Leitor RFID-RC522 (operando na frequência de 13.56 MHz para leitura das tags e cartões dos funcionários).
+* **Limitadores de Corrente:** 3x Resistores 220-Ohms (responsáveis por proteger os pinos do LED RGB, limitando a quantidade de corrente elétrica e evitando que os componentes queimem).
+* **Indicador Visual Multicor:** 1x LED RGB CÁTODO (responsável por sinalizar visualmente o status do sistema através de cores diferentes, possuindo um terminal negativo comum).
+* **Placa de Circuito Principal:** 1x PLACA MÃE (responsável por interconectar todos os componentes, permitindo a distribuição de energia e a comunicação entre o microcontrolador e os periféricos). 
+
+
 
 ---
 
