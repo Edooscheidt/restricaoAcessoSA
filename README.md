@@ -7,9 +7,10 @@
 </p>
 
 ## 🏢 Sobre a Block&Go
-A **Block&Go** é uma empresa especializada no desenvolvimento de softwares de segurança de alta confiabilidade. 
-Nosso foco é criar soluções inteligentes de automação e controle que protegem ambientes corporativos, mitigam riscos e garantem a integridade operacional de nossos clientes.
+A **Block&Go** é uma empresa especializada em softwares de alta segurança. Nosso foco é criar soluções inteligentes de automação e controle para proteger ambientes corporativos e mitigar riscos. 
+Métodos tradicionais, como chaves físicas, são vulneráveis: podem ser facilmente perdidas ou clonadas, permitindo acessos não autorizados e a total ausência de registros de movimentação.
 
+Para resolver isso, criamos uma Solução Inteligente de Acesso com RFID e Arduino. Substituímos as chaves por cartões: o sistema valida o acesso em tempo real, destrava a porta e registra a entrada. Garantimos assim segurança e controle total.
 ## 🔒 Projeto: Sistema de Restrição de Acesso (Fluxograma SA)
 Esta solução foi desenvolvida sob medida para gerenciar e restringir o acesso físico a ambientes corporativos críticos (como salas de servidores, tesourarias ou diretorias). 
 
