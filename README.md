@@ -38,7 +38,9 @@ Para a apresentação da nossa solução, centralizamos a lógica do sistema, o 
 | **Módulo de Leitura e Validação** | Software de ponta que executa a leitura da tag, valida o nível de acesso do funcionário e comanda a trava física. | [Acessar Simulador Wokwi 🌐](https://wokwi.com/projects/466305677130763265) |
 | **Fluxograma SA (Lógica do Sistema)** | Modelagem visual completa das regras de negócio, tomadas de decisão e restrições do fluxo. | [Visualizar no Figma 🎨](https://www.figma.com/board/mgICk6guB4dBxv1UPrZWvS/Code-Flowchart--Community-?node-id=6-9&t=vBzgOY70qMwmKwc2-1) |
 
-
+<p align="center">
+  <img width="2000" height="1414" alt="Image" src="https://github.com/user-attachments/assets/98970b8e-3f90-4a8a-a047-3be5b7cea36d" />
+</p>
 
 ---
 
