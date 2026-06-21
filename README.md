@@ -64,6 +64,8 @@ Para realizar testes ou replicar o ambiente de desenvolvimento da solução Bloc
 3. Conecte o **Arduino Uno** à porta USB do seu computador.
 4. Abra os códigos através dos links disponibilizados na seção de recursos e faça o upload para a placa.
 
+---
+
 <p align="center">
   <img width="2000" height="1414" alt="Image" src="https://github.com/user-attachments/assets/98970b8e-3f90-4a8a-a047-3be5b7cea36d" />
 </p>
